@@ -4,6 +4,7 @@ services:
   app:
     build:
       context: ./rest-tuto
+      dockerfile: .
     ports:
       - "8000:8000"
     volumes:
@@ -12,7 +13,8 @@ services:
   frontend:
     build:
       context: ./frontend
+      dockerfile: .
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend:/frontend
+      - ./frontend:/app/frontend

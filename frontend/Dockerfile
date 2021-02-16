@@ -1,17 +1,14 @@
 FROM node:alpine
 
-RUN mkdir /frontend 
-
-WORKDIR /frontend
+WORKDIR /app
 
 RUN npm install -g create-react-app
 
-
-COPY ./frontend /frontend
+COPY ./frontend /app/frontend
 
 RUN create-react-app frontend
 
-WORKDIR /frontend
+WORKDIR /app/frontend
 
 CMD sh -c "yarn start"
 
