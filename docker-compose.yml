@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: ./rest-tuto
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./rest-tuto:/rest-tuto
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/frontend
